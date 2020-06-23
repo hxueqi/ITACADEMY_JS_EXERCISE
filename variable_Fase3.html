@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <meta charset='utf-8'>
+         <title>Variables_Fase3</title>
+    </head>
+    <body>
+        Input your year: <input type="number" id="num" /><br>
+
+        <input type='button' onClick='caculateResult()' Value='Caculate' /><br>
+
+        <p id="result1"></p><br>
+        <p id="result2"></p><br>
+
+        <script>
+         function caculateResult(){
+            var birthYear = document.getElementById("num").value;
+            let year = 1948;
+            let answerToTrue = "Your birth year is leap year";
+            let answerToFlase = "Your birth year is not leap year";
+            let isLeapYear = Boolean(true);
+            let result1 = "";
+            let result2;
+
+            for(; year<=birthYear; year++){
+                if((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0)){
+                    result1 += year+"<br>";
+                }
+                document.getElementById("result1").innerHTML = result1;
+            }
+
+            if ((birthYear % 4 == 0) && (birthYear % 100 != 0) || (birthYear % 400 == 0)) isLeapYear = true;
+            else isLeapYear = false;
+
+            if(isLeapYear){
+                result2 = answerToTrue;
+            }
+            else result2 = answerToTrue;
+
+            document.getElementById("result2").innerHTML = result2;
+        }
+              
+        </script>
+    </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <meta charset='utf-8'>
+         <title>Restraurante_Fase1_2_3</title>
+    </head>
+    <body>
+        <script>
+            //Create the money notes
+            var money = [5, 10, 20, 50, 100, 200, 500];
+
+            //Inicial the dishes and price size
+            var dishes = new Array(5);
+            var price = new Array(5);
+
+            //Get the dishes and price info from cliente
+            for(let i =0; i<5; i++){
+
+                dishes[i] = window.prompt("Input the name of dish " + (i+1));
+            
+                price[i] = window.prompt("Input the price of dish " + (i+1));
+            }
+
+             //Show customer the menu
+            var menu = "";
+            for(let i =0; i<5; i++){
+                menu += dishes[i] + ": " + price[i] + "€" + "<br>";
+            }
+            
+
+            //Ask the order and save the information, each time ask if want to continue ordering, use 1/0 system
+            var listOrder = [];
+            var wantsOrderMore;
+            do{
+                listOrder.push(window.prompt("In the menu we have: " + menu + "What would you like to eat?"));
+                wantsOrderMore = window.prompt("Anything else? 1 = Yes, 0 = No");
+            }
+            while(wantsOrderMore==1);
+
+            //Inicial the total price
+            var totalPrice = 0;
+            
+            //Check the order if we can serve and calculate the total price,
+            for(let i=0; i<listOrder.length; i++) {
+                if (menuContains(dishes, listOrder[i])==true) {
+                    totalPrice += parseInt(price[i]);
+                } else{
+                    window.alert(listOrder[i] +", this dish does not exist in the menu");
+                }
+            }
+
+            window.alert("Total price: "+totalPrice);
+
+            //Calculate the note
+            let change = "";
+            for (let i=money.length-1; totalPrice>0 && i>=0; i--) {
+                let cont = 0;
+                while (money[i] <= totalPrice) {
+                    totalPrice -= money[i];
+                    cont++;
+                }
+                if (cont>0) {
+                    change+="You should pay " + cont +" of "+ money[i]+ "€\n";
+                }
+            }
+            window.alert(change);
+            
+
+            function menuContains(arr, elem) {
+                for(let i=0; i< arr.length; i++){
+                    if(arr[i]===elem) return true;
+                }
+                return false;
+            }
+            
+           
+              
+        </script>
+    </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <meta charset='utf-8'>
+         <title>Variables_Fase4</title>
+    </head>
+    <body>
+        Please input your name and surname: <input type="text" id="name" /><br>
+        Please input your day of birth: <input type="number" id="day" /><br>
+        Please input your month of birth: <input type="number" id="month" /><br>
+        Please input your year of birth: <input type="number" id="year" /><br>
+
+        <input type='button' onClick='displayResult()' Value='Confirm' /><br>
+
+        <p id="fullName"></p><br>
+        <p id="birthdate"></p><br>
+        <p id="isLeapYear"></p><br>
+
+        <script>
+         function displayResult(){
+            var name = document.getElementById("name").value;
+            var day = document.getElementById("day").value;
+            var month = document.getElementById("month").value;
+            var year = document.getElementById("year").value;
+            let birthday = day+"/"+month+"/"+year
+            let answerToTrue = "My birth year is leap year";
+            let answerToFlase = "My birth year is not leap year";
+            let isLeapYear = Boolean(true);
+
+            if ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0)) isLeapYear = true;
+            else isLeapYear = false;
+
+            if(isLeapYear){
+               result2 = answerToTrue;
+            }
+            else result2 = answerToTrue;
+
+           document.getElementById("fullName").innerHTML = "My name is " + name;
+           document.getElementById("birthdate").innerHTML =  "I was born in " + birthday;
+           document.getElementById("isLeapYear").innerHTML = result2;
+        }
+        
+        
+        </script>
+    </body>
+</html>

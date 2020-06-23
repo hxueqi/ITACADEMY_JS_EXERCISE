@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <meta charset='utf-8'>
+         <title>LetterRepeat_Fase3</title>
+    </head>
+    <body>
+        <script>
+            //Create the map
+            let mapAppearTimes = new Map();
+            //Create the a array contains letters of name
+            let name = ['X', 'u', 'e', 'q',' i', 'H', 'u', 'a', 'n', 'g'];
+             
+            //Store those characters and times that appear into the map
+             for(let i=0; i<name.length; i++){
+                let c = name[i];
+                if(mapAppearTimes.has(c)){
+                let times = mapAppearTimes.get(c);
+                     mapAppearTimes.set(c, times+1);
+                }
+                else{
+                    mapAppearTimes.set(c, 1);
+                }
+            }
+
+            //Print the result
+            for(let i=0; i<name.length; i++){
+                let c = name[i];
+                console.log("Character is: "+(c)+". The times of appearance is: "+ mapAppearTimes.get(c));
+            }
+              
+        </script>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <meta charset='utf-8'>
+         <title>LetterRepeat_Fase2</title>
+    </head>
+    <body>
+        <script>
+            //Create 3 list 
+             let name =['X', 'u','e','q','i'];
+             let vocales = ["a", "e", "i", "o", "u"];
+             let numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+             
+             //Check those characters of a name are vacales, number or constante
+            for(let i=0; i<name.length; i++) {
+                for(let i=0; i<name.length; i++) {
+                    if (vocales.includes(name[i])) {
+                        console.log("VOCAL");
+                    }
+                    else if(numbers.includes((name[i]))){
+                        console.log("El name no puede contener numbers.");
+                    }
+                    else{
+                        console.log("CONSONTANTE");
+                    }
+                }
+            }
+              
+        </script>
+    </body>
+</html>

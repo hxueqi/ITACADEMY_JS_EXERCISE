@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <meta charset='utf-8'>
+         <title>Ciudades_Fase4</title>
+    </head>
+    <body>
+        <script>
+
+            //Create 6 variables
+            var ciudad1;
+            var ciudad2;
+            var ciudad3;
+            var ciudad4;
+            var ciudad5;
+            var ciudad6;
+            
+            //Store input of the name of 6 cities
+            ciudad1 = window.prompt("Introduce el nombre de ciudad 1");
+            ciudad2 = window.prompt("Introduce el nombre de ciudad 2");
+            ciudad3 = window.prompt("Introduce el nombre de ciudad 3");
+            ciudad4 = window.prompt("Introduce el nombre de ciudad 4");
+            ciudad5 = window.prompt("Introduce el nombre de ciudad 5");
+            ciudad6 = window.prompt("Introduce el nombre de ciudad 6");
+
+            //Put 6 cities in an array 
+            let arrayCiudades = [];
+            arrayCiudades.push(ciudad1);
+            arrayCiudades.push(ciudad2);
+            arrayCiudades.push(ciudad3);
+            arrayCiudades.push(ciudad4);
+            arrayCiudades.push(ciudad5);
+            arrayCiudades.push(ciudad6);
+
+            for(let i = 0; i< arrayCiudades.length; i++) {
+                let ciudadNew = creaArrayCiudad(arrayCiudades[i]);
+                let ciudadNewReserve = creaReverseCiudad(ciudadNew);
+                console.log(ciudadNewReserve);
+            }
+
+            function creaArrayCiudad(ciudad) {
+                let ciudadNew = new Array(ciudad.length);
+      
+                for(let i = 0; i < ciudadNew.length; i++){
+                    ciudadNew[i] = ciudad[i];
+                }
+                return ciudadNew;
+            }
+
+            function creaReverseCiudad(ciudad) {
+                let ciudadReverse = new Array(ciudad.length);
+                
+                for(let i = 0; i < ciudad.length; i++){
+                    ciudadReverse[i] = ciudad[ciudad.length-i-1];
+                }
+                return ciudadReverse;
+            }
+              
+        </script>
+
+        
+    </body>
+</html>
